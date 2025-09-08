@@ -7,32 +7,32 @@
  */
 
 function conversorUnidades(unidad, valor) {
-    let metro = document.lasUnidades.unid_metro;
-    let pulgada = document.lasUnidades.unid_pulgada;
-    let pie = document.lasUnidades.unid_pie;
-    let yarda = document.lasUnidades.unid_yarda;
+    let metro, pie, pulgada, yarda;
 
-    // Convertir a metros
-    switch (unidad) {
-        case "unid_metro":
-            pulgada.value = valor * 39.3701;
-            pie.value = valor * 3.28084;
-            yarda.value = valor * 1.09361;
-            break;
-        case "unid_pulgada":
-            metro.value = valor / 39.3701;
-            pie.value = valor / 12;
-            yarda.value = valor / 36;
-            break;
-        case "unid_pie":
-            metro.value = valor / 3.28084;
-            pulgada.value = valor * 12;
-            yarda.value = valor / 3;
-            break;
-        case "unid_yarda":
-            metro.value = valor / 1.09361;
-            pulgada.value = valor * 36;
-            pie.value = valor * 3;
-            break;
-    }
+if (unidad=="unid_metro"){
+    metro=valor;
+    pie=3.28*metro;
+    pulgada=39.37*metro;
+    yarda=1.09*metro;
+} else if (unidad=="unid_pulgada"){
+    pulgada=valor;
+    metro=pulgada/39.37;
+    pie=3.28*metro;
+    yarda=1.09*metro;
+} else if (unidad=="unid_pie"){
+    pie=valor;
+    metro=pie/3.28;
+    pulgada=39.37*metro;
+    yarda=1.09*metro;
+} else if (unidad=="unid_yarda"){
+    yarda=valor;
+    metro=yarda/1.09;
+    pie=3.28*metro;
+    pulgada=39.37*metro;
+}
+
+    document.getElementById("metro").value=metro;
+    document.getElementById("pie").value=pie;
+    document.getElementById("pulgada").value=pulgada;
+    document.getElementById("yarda").value=yarda;
 }
