@@ -47,3 +47,16 @@ if (unidad=="unid_metro"){
     document.getElementById("yarda").value=yarda;
 }
 }
+
+let convertirGR = (id, valor) => {
+    let cantGrados, cantRadianes;
+    if(id=="grados"){
+        cantGrados = valor;
+        cantRadianes = (Math.PI/180)*cantGrados;
+        document.getElementById("radianes").value=cantRadianes;
+    } else if (id=="radianes"){
+        cantRadianes = valor;
+        cantGrados = (180/Math.PI)*cantRadianes;
+        document.getElementById("grados").value=cantGrados;
+    }
+}
