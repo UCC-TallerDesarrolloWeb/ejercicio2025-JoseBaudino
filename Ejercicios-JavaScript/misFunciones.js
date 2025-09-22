@@ -60,3 +60,18 @@ let convertirGR = (id, valor) => {
         document.getElementById("grados").value=cantGrados;
     }
 }
+
+/**
+ * Función para mostrar u ocultar un div
+ * @method mostrarOcultarDiv
+ * @param accion - String que indica si mostrar o ocultar ('mostrar' o 'ocultar')
+ */
+function mostrarOcultarDiv(accion) {
+    const div = document.querySelector('div[name="unDiv"]');
+    
+    if (accion === 'mostrar') {
+        div.style.display = 'block';
+    } else if (accion === 'ocultar') {
+        div.style.display = 'none';
+    }
+}
