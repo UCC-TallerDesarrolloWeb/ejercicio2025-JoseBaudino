@@ -15,18 +15,22 @@
         <p>
             <!--Label es incluido por cuestiones de Accesibilidad-->
             <!--Note que Label y el id del elemento poseen igual nombre-->
-            <label for="distancia"> Distancia</label> = <input id="distancia" type="text" name="inp_distancia">
-            <select name="unidades">
+            <label for="distancia"> Distancia</label> = <input id="distancia" type="text" name="inp_distancia" oninput="realizarConversion()">
+            <select name="unidades" onchange="realizarConversion()">
                 <option value="unid_metros">Metros</option>
                 <option value="unid_yardas">Yardas</option>
                 <option value="unid_pie">Pies</option>
                 <option value="unid_pulgadas">Pulgadas</option>
             </select>
-            <button>
+            <button type="button" onclick="irASegundaWeb()">
                 Segunda Web!
             </button>
         </p>
     </form>
+    
+    <!-- Div para mostrar los resultados de conversión -->
+    <div id="resultados" style="display: none; margin-top: 20px; padding: 15px; border: 1px solid #ccc; border-radius: 5px; background-color: #f9f9f9;">
+    </div>
 </div>
 </body>
 </html>
