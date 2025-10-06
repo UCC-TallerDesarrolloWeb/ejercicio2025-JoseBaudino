@@ -61,3 +61,32 @@ const productos = [
     imagen: "protectores-manos.webp",
   },
 ];
+
+let orderCatalog = (order) => {
+  let newProducts;
+  
+  switch (order) {
+    case menor:
+      newProducts = productos.sort((a, b) => a.precio - b.precio)
+      break;
+    case mayor:
+      newProducts = productos.sort((a, b) => b.precio - a.precio)
+      break;
+    case "a-z":
+      newProducts = productos.sort((a, b) => {
+        if (a.nombre < b.nombre) return -1;
+        if (a.nombre > b.nombre) return 1;
+        return 0;
+      });
+      break;
+    case "z-a":
+      newProducts = productos.sort((a, b) => {
+        if (a.nombre > b.nombre) return -1;
+        if (a.nombre < b.nombre) return 1;
+        return 0;
+      });
+      break; 
+    default:
+      newProducts = productos.sort((a, b) => a.precio - b.precio);
+      break;
+  }}
