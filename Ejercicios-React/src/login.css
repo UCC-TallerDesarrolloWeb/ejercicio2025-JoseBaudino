@@ -1,0 +1,28 @@
+.login-container{
+    display: flex;
+    font-family: Arial, Helvetica, sans-serif;
+    width: 100vw;
+    justify-content: center;
+    align-items: center;
+}
+
+.login-form{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    width: 300px;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color: #f9f9f9;
+}
+
+.login-form input{
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+}
+
+.login-form button{
+    background-color: gray;
+}
